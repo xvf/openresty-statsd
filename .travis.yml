@@ -3,6 +3,7 @@ language: erlang
 env:
   - LUA=""
   - LUA="luajit"
+  - LUA_PATH="lib/?.lua;;"
 
 branches:
   only:

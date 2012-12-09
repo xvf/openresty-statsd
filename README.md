@@ -13,9 +13,10 @@ A Lua module for openresty to send metrics to StatsD
 ## Installation
 
 1. [Install openresty](http://openresty.org) configured `--with-luajit`
-2. Copy `lib/statsd.lua` somewhere that openresty nginx can find (you may need to adjust your LUA_PATH or use [`lua_package_path` directive](http://wiki.nginx.org/HttpLuaModule#lua_package_path)
+2. Copy `lib/statsd.lua` somewhere that openresty nginx can find (you may need to adjust your LUA_PATH or use `lua_package_path` [directive](http://wiki.nginx.org/HttpLuaModule#lua_package_path)
 3. Configure nginx:
 
+```
     # an nginx conf
     http {
       init_by_lua 'require("statsd")'
@@ -32,6 +33,7 @@ A Lua module for openresty to send metrics to StatsD
         '
       }
     }
+```
 
 The request-response lifecycle in nginx has [eight phases](http://wiki.nginx.org/HttpLuaModule#ngx.get_phase). The data you are likely to want to report (HTTP status, request time) is available in the last phase, `log`, but the socket API is not available. That's why stats are registered in `log_by_lua` and sent via `flush` in `content_by_lua`.
 

@@ -1,4 +1,4 @@
--- The unit testing framework is http://olivinelabs.com/busted/
+require("busted")
 
 local statsd = require("statsd")
 

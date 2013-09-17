@@ -77,4 +77,4 @@ The request-response lifecycle in nginx has [eight phases](http://wiki.nginx.org
 
 ## Author
 
-[Dave Nolan](https://github.com/textgoeshere) / [lonelyplanet.com](http://www.lonelyplanet.com)
+[Dave Nolan](http://kapoq.com) / [lonelyplanet.com](http://www.lonelyplanet.com)
